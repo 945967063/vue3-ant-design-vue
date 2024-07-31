@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .flex-c {
+    @apply flex justify-center items-center;
+  }
+  .bg-details {
+    @apply bg-cover bg-no-repeat bg-center;
+  }
+}
+.anticon svg {
+  vertical-align: baseline;
+}

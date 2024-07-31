@@ -1,0 +1,16 @@
+import { createApp } from 'vue';
+import App from './App.vue';
+import '@/assets/styles/index.scss';
+import { mountRouter } from '@/router';
+import { createPinia } from 'pinia';
+import piniaPluginPersistedstate from 'pinia-plugin-persistedstate';
+import RequestHelper from './utils/BaseRequest';
+import i18n from './locales/index';
+RequestHelper.init();
+const app = createApp(App);
+const pinia = createPinia();
+pinia.use(piniaPluginPersistedstate);
+mountRouter(app);
+app.use(pinia);
+app.use(i18n);
+app.mount('#app');
